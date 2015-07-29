@@ -2,7 +2,7 @@ app.controller("mainCtrl", ["$scope","post",
   function($scope, post){
     debugger;
 
-    $scope.submitQuestion(postContent) = function(postContent){
+    $scope.submitQuestion = function(postContent){
       debugger;
       post.submitQuestion(postContent);
     };
