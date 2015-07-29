@@ -1,4 +1,4 @@
-app.factory("post", ["$firebaseArray", "firebaseCollectionFactory", "FURL"
+app.factory("post", ["$firebaseArray", "firebaseCollectionFactory", "FURL",
   function($firebaseArray, firebaseCollectionFactory, FURL) {
     var ref = new Firebase(FURL);
     var fbposts= firebaseCollectionFactory.getFirebaseArray('posts');
@@ -13,12 +13,13 @@ app.factory("post", ["$firebaseArray", "firebaseCollectionFactory", "FURL"
 ]);
 
 
-app.factory("firebaseCollectionFactory", ["$firebaseArray",
-  function($firebaseArray) {
+app.factory("firebaseCollectionFactory", ["$firebaseArray", "FURL",
+  function($firebaseArray, FURL) {
     var service = {};
 
     service.getFirebaseArray = function(resource) {
-      var ref = new Firebase("https://museumofhacks.firebaseio.com/" + resource);
+      debugger;
+      var ref = new Firebase( FURL + resource);
       // this uses AngularFire to create the synchronized array
       return $firebaseArray(ref);
     }

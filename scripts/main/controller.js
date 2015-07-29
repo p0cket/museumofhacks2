@@ -1,8 +1,11 @@
 app.controller("mainCtrl", ["$scope","post",
+  function($scope, post){
+    debugger;
 
-    function($scope, post){
-        $scope.submitQuestion(postContent){
-            post.submitQuestion(postContent);
-        };
-    }
+    $scope.submitQuestion(postContent) = function(postContent){
+      debugger;
+      post.submitQuestion(postContent);
+    };
+
+  }
 ]);
