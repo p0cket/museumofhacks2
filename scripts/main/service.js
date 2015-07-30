@@ -3,10 +3,13 @@ app.factory("post", ["$firebaseArray", "firebaseCollectionFactory", "FURL",
     var ref = new Firebase(FURL);
     var fbposts= firebaseCollectionFactory.getFirebaseArray('posts');
 
+
     var post = {
         submitQuestion: function(postContent) {
           fbposts.$add(postContent);
-        }
+        },
+
+        posts: fbposts,
     }
   return post;
   }
